@@ -42,7 +42,7 @@
     albumLabel: 'Image %1 of %2',
     alwaysShowNavOnTouchDevices: false,
     fadeDuration: 600,
-    fitImagesInViewport: true,
+    fit~/assets/imagesInViewport: true,
     imageFadeDuration: 600,
     // maxWidth: 800,
     // maxHeight: 600,
@@ -66,8 +66,8 @@
     $.extend(this.options, options);
   };
 
-  Lightbox.prototype.imageCountLabel = function(currentImageNum, totalImages) {
-    return this.options.albumLabel.replace(/%1/g, currentImageNum).replace(/%2/g, totalImages);
+  Lightbox.prototype.imageCountLabel = function(currentImageNum, total~/assets/images) {
+    return this.options.albumLabel.replace(/%1/g, currentImageNum).replace(/%2/g, total~/assets/images);
   };
 
   Lightbox.prototype.init = function() {
@@ -287,7 +287,7 @@
       $image.width(preloader.width);
       $image.height(preloader.height);
 
-      if (self.options.fitImagesInViewport) {
+      if (self.options.fit~/assets/imagesInViewport) {
         // Fit image inside the viewport.
         // Take into account the border around the image and an additional 10px gutter on each side.
 
@@ -361,14 +361,14 @@
     }
   };
 
-  // Display the image and its details and begin preload neighboring images.
+  // Display the image and its details and begin preload neighboring ~/assets/images.
   Lightbox.prototype.showImage = function() {
     this.$lightbox.find('.lb-loader').stop(true).hide();
     this.$lightbox.find('.lb-image').fadeIn(this.options.imageFadeDuration);
 
     this.updateNav();
     this.updateDetails();
-    this.preloadNeighboringImages();
+    this.preloadNeighboring~/assets/images();
     this.enableKeyboardNav();
   };
 
@@ -446,8 +446,8 @@
     });
   };
 
-  // Preload previous and next images in set.
-  Lightbox.prototype.preloadNeighboringImages = function() {
+  // Preload previous and next ~/assets/images in set.
+  Lightbox.prototype.preloadNeighboring~/assets/images = function() {
     if (this.album.length > this.currentImageIndex + 1) {
       var preloadNext = new Image();
       preloadNext.src = this.album[this.currentImageIndex + 1].link;

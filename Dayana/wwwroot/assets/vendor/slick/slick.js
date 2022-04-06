@@ -1510,14 +1510,14 @@
         var _ = this,
             loadRange, cloneRange, rangeStart, rangeEnd;
 
-        function loadImages(imagesScope) {
+        function load~/assets/images(~/assets/imagesScope) {
 
-            $('img[data-lazy]', imagesScope).each(function() {
+            $('img[data-lazy]', ~/assets/imagesScope).each(function() {
 
                 var image = $(this),
-                    imageSource = $(this).attr('data-lazy'),
-                    imageSrcSet = $(this).attr('data-srcset'),
-                    imageSizes  = $(this).attr('data-sizes') || _.$slider.attr('data-sizes'),
+                    ~/assets/imagesource = $(this).attr('data-lazy'),
+                    ~/assets/imagesrcSet = $(this).attr('data-srcset'),
+                    ~/assets/imagesizes  = $(this).attr('data-sizes') || _.$slider.attr('data-sizes'),
                     imageToLoad = document.createElement('img');
 
                 imageToLoad.onload = function() {
@@ -1525,24 +1525,24 @@
                     image
                         .animate({ opacity: 0 }, 100, function() {
 
-                            if (imageSrcSet) {
+                            if (~/assets/imagesrcSet) {
                                 image
-                                    .attr('srcset', imageSrcSet );
+                                    .attr('srcset', ~/assets/imagesrcSet );
 
-                                if (imageSizes) {
+                                if (~/assets/imagesizes) {
                                     image
-                                        .attr('sizes', imageSizes );
+                                        .attr('sizes', ~/assets/imagesizes );
                                 }
                             }
 
                             image
-                                .attr('src', imageSource)
+                                .attr('src', ~/assets/imagesource)
                                 .animate({ opacity: 1 }, 200, function() {
                                     image
                                         .removeAttr('data-lazy data-srcset data-sizes')
                                         .removeClass('slick-loading');
                                 });
-                            _.$slider.trigger('lazyLoaded', [_, image, imageSource]);
+                            _.$slider.trigger('lazyLoaded', [_, image, ~/assets/imagesource]);
                         });
 
                 };
@@ -1554,11 +1554,11 @@
                         .removeClass( 'slick-loading' )
                         .addClass( 'slick-lazyload-error' );
 
-                    _.$slider.trigger('lazyLoadError', [ _, image, imageSource ]);
+                    _.$slider.trigger('lazyLoadError', [ _, image, ~/assets/imagesource ]);
 
                 };
 
-                imageToLoad.src = imageSource;
+                imageToLoad.src = ~/assets/imagesource;
 
             });
 
@@ -1597,18 +1597,18 @@
             }
         }
 
-        loadImages(loadRange);
+        load~/assets/images(loadRange);
 
         if (_.slideCount <= _.options.slidesToShow) {
             cloneRange = _.$slider.find('.slick-slide');
-            loadImages(cloneRange);
+            load~/assets/images(cloneRange);
         } else
         if (_.currentSlide >= _.slideCount - _.options.slidesToShow) {
             cloneRange = _.$slider.find('.slick-cloned').slice(0, _.options.slidesToShow);
-            loadImages(cloneRange);
+            load~/assets/images(cloneRange);
         } else if (_.currentSlide === 0) {
             cloneRange = _.$slider.find('.slick-cloned').slice(_.options.slidesToShow * -1);
-            loadImages(cloneRange);
+            load~/assets/images(cloneRange);
         }
 
     };
@@ -1733,33 +1733,33 @@
         var _ = this,
             $imgsToLoad = $( 'img[data-lazy]', _.$slider ),
             image,
-            imageSource,
-            imageSrcSet,
-            imageSizes,
+            ~/assets/imagesource,
+            ~/assets/imagesrcSet,
+            ~/assets/imagesizes,
             imageToLoad;
 
         if ( $imgsToLoad.length ) {
 
             image = $imgsToLoad.first();
-            imageSource = image.attr('data-lazy');
-            imageSrcSet = image.attr('data-srcset');
-            imageSizes  = image.attr('data-sizes') || _.$slider.attr('data-sizes');
+            ~/assets/imagesource = image.attr('data-lazy');
+            ~/assets/imagesrcSet = image.attr('data-srcset');
+            ~/assets/imagesizes  = image.attr('data-sizes') || _.$slider.attr('data-sizes');
             imageToLoad = document.createElement('img');
 
             imageToLoad.onload = function() {
 
-                if (imageSrcSet) {
+                if (~/assets/imagesrcSet) {
                     image
-                        .attr('srcset', imageSrcSet );
+                        .attr('srcset', ~/assets/imagesrcSet );
 
-                    if (imageSizes) {
+                    if (~/assets/imagesizes) {
                         image
-                            .attr('sizes', imageSizes );
+                            .attr('sizes', ~/assets/imagesizes );
                     }
                 }
 
                 image
-                    .attr( 'src', imageSource )
+                    .attr( 'src', ~/assets/imagesource )
                     .removeAttr('data-lazy data-srcset data-sizes')
                     .removeClass('slick-loading');
 
@@ -1767,7 +1767,7 @@
                     _.setPosition();
                 }
 
-                _.$slider.trigger('lazyLoaded', [ _, image, imageSource ]);
+                _.$slider.trigger('lazyLoaded', [ _, image, ~/assets/imagesource ]);
                 _.progressiveLazyLoad();
 
             };
@@ -1792,7 +1792,7 @@
                         .removeClass( 'slick-loading' )
                         .addClass( 'slick-lazyload-error' );
 
-                    _.$slider.trigger('lazyLoadError', [ _, image, imageSource ]);
+                    _.$slider.trigger('lazyLoadError', [ _, image, ~/assets/imagesource ]);
 
                     _.progressiveLazyLoad();
 
@@ -1800,11 +1800,11 @@
 
             };
 
-            imageToLoad.src = imageSource;
+            imageToLoad.src = ~/assets/imagesource;
 
         } else {
 
-            _.$slider.trigger('allImagesLoaded', [ _ ]);
+            _.$slider.trigger('all~/assets/imagesLoaded', [ _ ]);
 
         }
 

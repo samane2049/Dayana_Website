@@ -1211,7 +1211,7 @@ $.magnificPopup.registerModule('image', {
 		/**
 		 * Function that loops until the image has size to display elements that rely on it asap
 		 */
-		findImageSize: function(item) {
+		find~/assets/imagesize: function(item) {
 
 			var counter = 0,
 				img = item.img[0],
@@ -1346,7 +1346,7 @@ $.magnificPopup.registerModule('image', {
 			if(!item.hasSize) {
 				item.imgHidden = true;
 				template.addClass('mfp-loading');
-				mfp.findImageSize(item);
+				mfp.find~/assets/imagesize(item);
 			}
 
 			return template;
@@ -1442,7 +1442,7 @@ $.magnificPopup.registerModule('zoom', {
 								animatedImg.remove();
 								image = animatedImg = null;
 								_mfpTrigger('ZoomAnimationEnded');
-							}, 16); // avoid blink when switching images
+							}, 16); // avoid blink when switching ~/assets/images
 
 						}, duration); // this timeout equals animation duration
 
@@ -1746,7 +1746,7 @@ $.magnificPopup.registerModule('gallery', {
 				if(mfp._preloadTimeout) clearTimeout(mfp._preloadTimeout);
 
 				mfp._preloadTimeout = setTimeout(function() {
-					mfp.preloadNearbyImages();
+					mfp.preloadNearby~/assets/images();
 					mfp._preloadTimeout = null;
 				}, 16);
 			});
@@ -1774,7 +1774,7 @@ $.magnificPopup.registerModule('gallery', {
 			mfp.index = newIndex;
 			mfp.updateItemHTML();
 		},
-		preloadNearbyImages: function() {
+		preloadNearby~/assets/images: function() {
 			var p = mfp.st.gallery.preload,
 				preloadBefore = Math.min(p[0], mfp.items.length),
 				preloadAfter = Math.min(p[1], mfp.items.length),
