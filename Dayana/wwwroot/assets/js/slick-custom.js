@@ -45,6 +45,7 @@
                 pauseOnHover: false,
                 slidesToShow: 1,
                 slidesToScroll: 1,
+                rtl:true,
                 fade: true,
                 speed: 1000,
                 infinite: true,
